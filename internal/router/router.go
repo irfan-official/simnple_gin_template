@@ -1,18 +1,27 @@
 package router
 
 import (
-	"github.com/irfan-official/simple_gin_template/internal/handler"
+	"net/http"
 	"github.com/gin-gonic/gin"
+	"github.com/irfan-official/simple_gin_template/internal/features/hello"
 )
 
-func NewRouter() *gin.Engine {
+type RouteRegistrar func(rg *gin.RouterGroup)
+
+func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
-	healthHandler := handler.NewHealthHandler()
+	api := r.Group("/api")
+	v1 := api.Group("/v1")
 
-	apiV1 := r.Group("/api/v1")
+	//  register your router here
+	v1Routes := []RouteRegistrar{
+		hello.RegisterRoutesV1,
+	}
 
-	apiV1.GET("/health", healthHandler.Health)
+	for _, register := range v1Routes {
+		register(v1)
+	}
 
 	return r
 }

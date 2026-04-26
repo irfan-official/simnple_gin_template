@@ -11,7 +11,7 @@ import (
 func main() {
 	cfg := config.Load()
 
-	r := router.NewRouter()
+	r := router.SetupRouter()
 
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
