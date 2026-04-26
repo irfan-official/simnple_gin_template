@@ -1,9 +1,8 @@
 package router
 
 import (
-	"net/http"
 	"github.com/gin-gonic/gin"
-	"github.com/irfan-official/simple_gin_template/internal/features/hello"
+	hello "github.com/irfan-official/simple_gin_template/internal/features/hello"
 )
 
 type RouteRegistrar func(rg *gin.RouterGroup)
