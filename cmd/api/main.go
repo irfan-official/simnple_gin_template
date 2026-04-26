@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 	"github.com/gin-gonic/gin"
-	"github.com/irfan-official/simnple_gin_template/internal/config"
-	"github.com/irfan-official/simnple_gin_template/internal/router"
+	"github.com/irfan-official/simple_gin_template/internal/config"
+	"github.com/irfan-official/simple_gin_template/internal/router"
 )
 
 func main() {

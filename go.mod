@@ -1,4 +1,4 @@
-module github.com/irfan-official/simnple_gin_template
+module github.com/irfan-official/simple_gin_template
 
 go 1.26.2
 

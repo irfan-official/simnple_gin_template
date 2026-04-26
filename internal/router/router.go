@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/irfan-official/simnple_gin_template/internal/handler"
+	"github.com/irfan-official/simple_gin_template/internal/handler"
 	"github.com/gin-gonic/gin"
 )
 
