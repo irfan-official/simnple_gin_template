@@ -13,15 +13,17 @@ func main() {
 
 	r := router.NewRouter()
 
-	log.Printf("Server running on %s\n", cfg.Port)
-	if err := r.Run(":" + cfg.Port); err != nil {
-		log.Fatal(err)
-	}
-
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
            "status": true,
 		   "message": "Server is running ...",
 		})
 	})
+
+	log.Printf("Server running on %s\n", cfg.Port)
+
+	if err := r.Run(":" + cfg.Port); err != nil {
+		log.Fatal(err)
+	}
+
 }
