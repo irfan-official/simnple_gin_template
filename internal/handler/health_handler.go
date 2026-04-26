@@ -15,6 +15,6 @@ func NewHealthHandler() *HealthHandler {
 func (h *HealthHandler) Health(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"status": true,
-		"message": "Health service"
+		"message": "Health service",
 	})
 }
